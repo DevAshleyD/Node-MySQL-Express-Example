@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- Required for jQuery to work -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada:400,700" rel="stylesheet">
+
+  <style>
+    /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: mediumturquoise; /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+      }
+      /* Modal Content */
+      .modal-content {
+        background-color: whitesmoke;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+      /* The Close Button */
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      #logo {
+        font-family: 'Montserrat Subrayada', sans-serif;
+      }
+    </style>
+
+  <title>FLYCart</title>
+</head>
+
+<body>
+
+
+  <!-- Products Listed -->
+  <div class="w3-row-padding">
+    <div class="w3-container">
+      <div id="top">
+        <form id="userPurchase">
+          <div id="logo" style="font-family: 'Montserrat Subrayada', sans-serif;">
+            <h1>FLYCart</h1>
+          </div>
+          <label for="productId">Product ID</label>
+          <input required type="text" id="productId" name="productId" placeholder="Enter Product ID" />
+          <label for="productQuantity">Product Quantity</label>
+          <input required type="text" id="productQuantity" name="productQuantity" placeholder="Enter Product Quantity" />
+          <button data-toggle="modal" data-target="#exampleModalCenter" id="submitOrders">
+            Add to FLYCart
+          </button>
+        </form>
+      </div>
+      <br>
+      <div class="w3-responsive w3-card-4">
+        <table class="w3-table w3-striped w3-bordered">
+          <table class="w3-table w3-striped w3-bordered">
+            <thead>
+              <tr class="w3-theme">
+                <th class="left"><span>Item</span></th>
+                <th class="left">Department</th>
+                <th class="qty-hdr">Price</th>
+                <th class="bag_itemtotal total-hdr">Inventory</th>
+                <th class="bag_itemtotal total-hdr">Product ID #</th>
+                <th class="left"><span>Item</span></th>
+                <th class="left">Department</th>
+                <th class="qty-hdr">Price</th>
+                <th class="bag_itemtotal total-hdr">Inventory</th>
+                <th class="bag_itemtotal total-hdr">Product ID #</th>
+                <th class="left"><span>Item</span></th>
+                <th class="left">Department</th>
+              </tr>
+            </thead>
+            <tbody id="searchDump"></tbody>
+          </table>
+      </div>
+      <!-- <button id="shopping-cart">View Your Cart</button> -->
+      <br>
+      <div class="w3-center">
+        <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" id="shopping-cart" style="font-weight:900;">View Cart</button></div>
+
+    </div>
+  </div>
+
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="items">
+
+      </div>
+      <!-- <p>Place your order...</p> -->
+      <button id="purchase">Checkout</button>
+    </div>
+  </div>
+
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
